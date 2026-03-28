@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.last.fm)",
+      "WebSearch",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:21st.dev)",
+      "WebFetch(domain:lastfm-docs.github.io)",
+      "WebFetch(domain:dribbble.com)",
+      "WebFetch(domain:medium.com)",
+      "WebFetch(domain:atmos.style)",
+      "WebFetch(domain:support.last.fm)",
+      "WebFetch(domain:dev.to)",
+      "WebFetch(domain:ztabs.co)"
+    ]
+  }
+}
