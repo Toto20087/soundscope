@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono, Sora } from "next/font/google";
+import { Footer } from "@/components/layout/footer";
 import "./globals.css";
 
 const inter = Inter({
@@ -44,6 +45,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-bg-primary text-text-primary">
         {children}
+        <Footer />
       </body>
     </html>
   );
