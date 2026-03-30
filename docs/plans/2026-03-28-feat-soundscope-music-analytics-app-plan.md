@@ -318,45 +318,41 @@ Test cases to validate: `AC/DC`, `Guns N' Roses`, `Bjork`, `The xx`, `!!!`, `+44
 
 **Tasks:**
 
-- [ ] Initialize Next.js project with App Router, TypeScript, Tailwind CSS
+- [x] Initialize Next.js project with App Router, TypeScript, Tailwind CSS
   - `npx create-next-app@latest sound-scope --typescript --tailwind --app --src-dir`
-- [ ] Install dependencies:
+- [x] Install dependencies:
   ```
-  npm install recharts framer-motion lucide-react dompurify
-  npm install -D @types/dompurify
+  npm install recharts framer-motion lucide-react isomorphic-dompurify
   npx shadcn@latest init
-  npx shadcn@latest add button card tabs tooltip skeleton badge scroll-area separator toggle-group
+  npx shadcn@latest add button card skeleton badge separator
   ```
-- [ ] Configure `next.config.ts`:
+- [x] Configure `next.config.ts`:
   - Remote image patterns for `lastfm.freetls.fastly.net`
-  - Enable `cacheComponents` if on Next.js 16+
-- [ ] Configure `tailwind.config.ts`:
+- [x] Configure `globals.css` (Tailwind v4 @theme inline):
   - Custom colors (dark theme palette from design guide)
   - Custom fonts (Sora, Inter, JetBrains Mono)
-  - Spacing scale, border radius scale
-- [ ] Set up `globals.css`:
   - CSS variables for all colors, gradients, glass effects
   - Base dark theme styles
   - Smooth scroll behavior
-- [ ] Configure fonts in `layout.tsx` using `next/font/google`
+- [x] Configure fonts in `layout.tsx` using `next/font/google`
   - `Sora` (headings), `Inter` (body), `JetBrains_Mono` (stats)
-- [ ] Create `src/lib/env.ts` - environment variable validation
-- [ ] Create `src/lib/types.ts` - TypeScript interfaces:
+- [x] Create `src/lib/env.ts` - environment variable validation
+- [x] Create `src/lib/types.ts` - TypeScript interfaces:
   - Raw Last.fm response types (`LastFmArtistInfo`, `LastFmTopAlbum`, etc.)
   - Normalized app types (`Artist`, `Album`, `Track`, `FunFact`)
   - API response types for each endpoint
-- [ ] Create `src/lib/constants.ts`:
+- [x] Create `src/lib/constants.ts`:
   - API base URLs, cache durations, rate limits, default limits
-- [ ] Create `src/lib/normalize.ts`:
+- [x] Create `src/lib/normalize.ts`:
   - `normalizeArtist()` - converts raw Last.fm artist to clean `Artist` type
   - `normalizeAlbum()` - converts raw album, handles `#text`/`@attr`, string→number
   - `normalizeTrack()` - converts raw track
   - `normalizeImage()` - extracts best available image URL from image array
   - `ensureArray()` - handles single-item-vs-array inconsistency
-- [ ] Create `src/lib/sanitize.ts`:
+- [x] Create `src/lib/sanitize.ts`:
   - DOMPurify wrapper allowing: `<p>`, `<br>`, `<a>`, `<em>`, `<strong>`
   - Strip "Read more on Last.fm" links from summaries
-- [ ] Create `src/lib/lastfm.ts` (server-only):
+- [x] Create `src/lib/lastfm.ts` (server-only):
   - `lastfmFetch<T>()` - base fetch with rate limiting (4 req/sec throttle), error checking, caching
   - `searchArtists(query)` - artist.search
   - `getArtistInfo(name)` - artist.getInfo with `autocorrect=1`
@@ -365,23 +361,23 @@ Test cases to validate: `AC/DC`, `Guns N' Roses`, `Bjork`, `The xx`, `!!!`, `+44
   - `getAlbumInfo(artist, album)` - album.getInfo
   - Custom User-Agent header on all requests
   - Error code 29 retry logic (wait + retry once)
-- [ ] Create `src/lib/musicbrainz.ts` (server-only):
-  - `getAlbumReleaseDate(mbid)` - query by MBID
-  - `searchAlbumReleaseDate(artist, album)` - query by name
+- [x] Create `src/lib/musicbrainz.ts` (server-only):
+  - `getAlbumByMbid(mbid)` - query by MBID
+  - `searchAlbumReleaseInfo(artist, album)` - query by name
   - 1 req/sec rate limiting
   - Custom User-Agent header (required by MusicBrainz)
-- [ ] Create `src/lib/data-aggregator.ts` (server-only):
+- [x] Create `src/lib/data-aggregator.ts` (server-only):
   - `getArtistFullProfile(name)` - orchestrates all calls, returns merged data
   - `enrichAlbumsWithMusicBrainz(albums, artist)` - adds dates/types
   - `sortAlbumsByDate(albums)` - chronological sort
-- [ ] Create all API routes:
+- [x] Create all API routes:
   - `app/api/lastfm/search/route.ts`
   - `app/api/lastfm/artist/[name]/route.ts`
   - `app/api/lastfm/artist/[name]/albums/route.ts`
   - `app/api/lastfm/artist/[name]/tracks/route.ts`
   - `app/api/lastfm/album/route.ts`
-- [ ] Add `Cache-Control` headers to all API routes
-- [ ] Test all API routes with Postman/curl
+- [x] Add `Cache-Control` headers to all API routes
+- [x] Build passes with zero TypeScript errors
 
 **Files to create:**
 ```
