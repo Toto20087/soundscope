@@ -409,56 +409,56 @@ src/app/api/lastfm/album/route.ts
 
 **Tasks:**
 
-- [ ] Create `src/components/ui/GlassCard.tsx`:
+- [x] Create `src/components/ui/GlassCard.tsx`:
   - Glassmorphic container: `bg-white/[0.05] backdrop-blur-xl border border-white/[0.1]`
   - Optional accent top border (gradient)
   - Optional glow effect
   - Hover state: `hover:bg-white/[0.08] hover:border-white/[0.15]`
-- [ ] Create `src/components/ui/StatCard.tsx`:
+- [x] Create `src/components/ui/StatCard.tsx`:
   - Icon + large number (gradient text, mono font) + label
   - Uses GlassCard as base
-- [ ] Create `src/components/ui/GenreChip.tsx`:
+- [x] Create `src/components/ui/GenreChip.tsx`:
   - Genre-specific colors (Pop=purple, Rock=rose, R&B=cyan, etc.)
   - Glassmorphic pill: `bg-white/10 border rounded-full`
-- [ ] Create `src/components/ui/PopularityBar.tsx`:
+- [x] Create `src/components/ui/PopularityBar.tsx`:
   - Gradient fill bar: `from-purple-500 via-violet-400 to-cyan-400`
   - ARIA progressbar attributes
   - Width proportional to value/max
-- [ ] Create `src/components/ui/SafeImage.tsx` (client):
+- [x] Create `src/components/ui/SafeImage.tsx` (client):
   - next/image with error fallback
   - Cascading size fallback for Last.fm images
   - Placeholder blur support
-- [ ] Create `src/components/ui/CountUp.tsx` (client):
+- [x] Create `src/components/ui/CountUp.tsx` (client):
   - Animated number counter using framer-motion `useMotionValue`
   - Triggers on scroll into view (`useInView`)
-- [ ] Create `src/components/ui/AmbientBackground.tsx` (client):
+- [x] Create `src/components/ui/AmbientBackground.tsx` (client):
   - 2-3 floating gradient orbs with slow drift animation
   - Fixed position behind content
   - Respects `prefers-reduced-motion`
-- [ ] Create `src/components/ui/Skeleton.tsx`:
+- [x] Create `src/components/ui/Skeleton.tsx`:
   - `ArtistHeroSkeleton` - matches hero layout dimensions
   - `TrackListSkeleton` - matches track row layout
   - `TimelineSkeleton` - matches timeline shape
   - `ChartSkeleton` - rectangle matching chart dimensions
   - `AlbumCardSkeleton` - matches album card dimensions
   - All use dark theme: `bg-white/10 animate-pulse`
-- [ ] Create `src/components/charts/CustomTooltip.tsx` (client):
+- [x] Create `src/components/charts/CustomTooltip.tsx` (client):
   - Glassmorphic tooltip: `bg-[#12121A]/95 backdrop-blur-md border border-white/10 rounded-xl`
-- [ ] Create `src/components/charts/BarChartWrapper.tsx` (client):
+- [x] Create `src/components/charts/BarChartWrapper.tsx` (client):
   - Lazy-loaded with `next/dynamic` + `ssr: false`
   - Dark theme configuration
   - Rounded bars, gradient fills
-- [ ] Create `src/components/charts/AreaChartWrapper.tsx` (client):
+- [x] Create `src/components/charts/AreaChartWrapper.tsx` (client):
   - Lazy-loaded, gradient area fill
-- [ ] Create `src/components/charts/ChartContainer.tsx`:
+- [x] Create `src/components/charts/ChartContainer.tsx`:
   - Wrapper with title, metric toggle buttons, and loading skeleton
-- [ ] Create `src/components/layout/Header.tsx`:
+- [x] Create `src/components/layout/Header.tsx`:
   - Logo + compact search bar (on non-landing pages)
   - Glassmorphic background with blur
-- [ ] Create `src/components/layout/Footer.tsx`:
+- [x] Create `src/components/layout/Footer.tsx`:
   - "Powered by Last.fm" attribution (TOS requirement)
   - "Built with SoundScope" branding
-- [ ] Create `src/components/search/HeroSearchBar.tsx` (client):
+- [x] Create `src/components/search/HeroSearchBar.tsx` (client):
   - Large (56px height), glassmorphic
   - 300ms debounce via `useDebounce`
   - `AbortController` for cancelling in-flight requests
@@ -467,7 +467,7 @@ src/app/api/lastfm/album/route.ts
   - Focus glow animation: `ring-2 ring-purple-500/20`
   - Scale up on focus: `scale-[1.02]`
   - Placeholder: "What do you want to explore?"
-- [ ] Create `src/components/search/SearchDropdown.tsx` (client):
+- [x] Create `src/components/search/SearchDropdown.tsx` (client):
   - Glassmorphic dropdown panel
   - Artist rows: image + name + listener count + chevron
   - Active item highlighting
