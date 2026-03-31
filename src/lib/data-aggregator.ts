@@ -6,6 +6,7 @@ import {
   getArtistTopTracks,
 } from "./lastfm";
 import { enrichAlbum } from "./musicbrainz";
+import { getArtistImage } from "./deezer";
 import {
   normalizeArtist,
   normalizeTopAlbum,
@@ -23,15 +24,21 @@ import type { Album, ArtistFullProfile } from "./types";
 export async function getArtistFullProfile(
   artistName: string
 ): Promise<ArtistFullProfile> {
-  // Phase 1: Parallel fetch of core data from Last.fm
-  const [rawArtistInfo, rawTopAlbums, rawTopTracks] = await Promise.all([
-    getArtistInfo(artistName),
-    getArtistTopAlbums(artistName, 30), // Fetch 30, filter to ~20
-    getArtistTopTracks(artistName, 10),
-  ]);
+  // Phase 1: Parallel fetch of core data from Last.fm + artist image from Deezer
+  const [rawArtistInfo, rawTopAlbums, rawTopTracks, artistImage] =
+    await Promise.all([
+      getArtistInfo(artistName),
+      getArtistTopAlbums(artistName, 30),
+      getArtistTopTracks(artistName, 10),
+      getArtistImage(artistName),
+    ]);
 
   // Phase 2: Normalize raw responses
   const artist = normalizeArtist(rawArtistInfo);
+  // Override broken Last.fm image with Deezer image
+  if (artistImage) {
+    artist.image = artistImage;
+  }
 
   const albumsRaw = ensureArray(rawTopAlbums.topalbums?.album);
   const albums = filterValidAlbums(albumsRaw.map(normalizeTopAlbum));

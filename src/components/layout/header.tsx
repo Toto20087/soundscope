@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { siteConfig } from "@/config/site";
+import { SoundScopeLogo, SoundScopeWordmark } from "@/components/ui/logo";
 
 export function Header() {
   return (
@@ -7,9 +7,10 @@ export function Header() {
       <div className="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
         <Link
           href="/"
-          className="text-lg font-heading font-bold text-gradient hover:opacity-80 transition-opacity"
+          className="flex items-center gap-2.5 hover:opacity-80 transition-opacity"
         >
-          {siteConfig.name}
+          <SoundScopeLogo size={32} />
+          <SoundScopeWordmark className="text-lg" />
         </Link>
       </div>
     </header>

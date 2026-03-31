@@ -66,9 +66,14 @@ export function ChartContainer({
                 className={cn(
                   "px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200",
                   metric.key === activeMetric
-                    ? "bg-accent-purple text-white"
-                    : "bg-white/5 text-text-secondary hover:bg-white/10"
+                    ? "text-white"
+                    : "bg-gray-100 text-text-secondary hover:bg-gray-200"
                 )}
+                style={
+                  metric.key === activeMetric
+                    ? { backgroundColor: "var(--accent-hex)" }
+                    : undefined
+                }
               >
                 {metric.label}
               </button>

@@ -62,6 +62,7 @@ export function SafeImage({
       width={width}
       height={height}
       className={className}
+      style={{ width: "auto", height: "auto" }}
       priority={priority}
       onError={() => {
         if (!hasError) {

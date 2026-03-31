@@ -1,9 +1,7 @@
 "use client";
 
-import { Users, Headphones, Disc3, Share2 } from "lucide-react";
-import { StatCard } from "@/components/ui/stat-card";
-import { GenreChip } from "@/components/ui/genre-chip";
-import { getInitials, formatNumber } from "@/lib/utils";
+import { Share2 } from "lucide-react";
+import { formatNumber } from "@/lib/utils";
 import type { Artist } from "@/lib/types";
 
 interface ArtistHeroProps {
@@ -12,7 +10,9 @@ interface ArtistHeroProps {
 }
 
 export function ArtistHero({ artist, albumCount }: ArtistHeroProps) {
-  const firstAlbumImage = artist.image;
+  const hasImage =
+    artist.image &&
+    !artist.image.includes("2a96cbd8b46e442fc41c2b86b821562f");
 
   const handleShare = async () => {
     try {
@@ -25,78 +25,83 @@ export function ArtistHero({ artist, albumCount }: ArtistHeroProps) {
         await navigator.clipboard.writeText(window.location.href);
       }
     } catch {
-      // User cancelled share
+      // cancelled
     }
   };
 
   return (
-    <section className="relative w-full overflow-hidden">
-      {/* Blurred background */}
-      <div className="absolute inset-0">
-        {firstAlbumImage ? (
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${firstAlbumImage})` }}
+    <section className="relative min-h-[870px] flex flex-col justify-end pb-20 pt-32">
+      {/* Background image */}
+      <div className="absolute inset-0 -z-10 overflow-hidden rounded-xl md:rounded-lg">
+        {hasImage ? (
+          <img
+            src={artist.image!}
+            alt=""
+            className="w-full h-full object-cover opacity-90 brightness-75 grayscale contrast-125"
+            aria-hidden="true"
           />
         ) : (
-          <div className="absolute inset-0 bg-hero-gradient" />
+          <div className="w-full h-full bg-gradient-to-br from-zinc-300 to-zinc-500" />
         )}
-        <div className="absolute inset-0 backdrop-blur-3xl" />
-        <div className="absolute inset-0 bg-gradient-to-b from-bg-primary/60 via-bg-primary/80 to-bg-primary" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#f9f9f9] via-transparent to-transparent" />
       </div>
 
+      {/* Share button */}
+      <button
+        onClick={handleShare}
+        className="absolute top-8 right-8 z-10 p-2.5 rounded-full bg-white/80 backdrop-blur-sm hover:bg-white transition-colors shadow-sm"
+        aria-label="Share artist profile"
+      >
+        <Share2 className="w-5 h-5 text-zinc-600" />
+      </button>
+
       {/* Content */}
-      <div className="relative max-w-6xl mx-auto px-4 pt-12 pb-8">
-        <div className="flex flex-col sm:flex-row gap-6 items-start">
-          {/* Artist Avatar (initials) */}
-          <div className="w-40 h-40 rounded-2xl bg-gradient-to-br from-purple-600 to-cyan-500 flex items-center justify-center shrink-0 shadow-[0_0_40px_rgba(139,92,246,0.3)]">
-            <span className="text-5xl font-bold text-white font-heading">
-              {getInitials(artist.name)}
+      <div className="space-y-6">
+        {/* Genre pills */}
+        {artist.tags.length > 0 && (
+          <div className="flex gap-2">
+            {artist.tags.slice(0, 3).map((tag) => (
+              <span
+                key={tag}
+                className="px-4 py-1 rounded-full text-xs font-bold tracking-widest uppercase text-white transition-colors duration-300"
+                style={{ backgroundColor: "var(--accent-hex)" }}
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+
+        {/* Artist name */}
+        <h1 className="font-heading font-black text-7xl md:text-9xl text-text-primary tracking-tighter leading-none">
+          {artist.name}
+        </h1>
+
+        {/* Stats */}
+        <div className="flex flex-wrap gap-12 pt-4">
+          <div className="flex flex-col">
+            <span className="text-xs uppercase tracking-widest text-text-tertiary font-bold opacity-60">
+              Monthly Listeners
+            </span>
+            <span className="font-heading text-4xl font-black">
+              {formatNumber(artist.listeners)}
             </span>
           </div>
-
-          <div className="flex-1 space-y-4">
-            {/* Name + Share */}
-            <div className="flex items-start justify-between gap-4">
-              <h1 className="text-4xl sm:text-5xl font-heading font-bold text-text-primary">
-                {artist.name}
-              </h1>
-              <button
-                onClick={handleShare}
-                className="p-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 transition-colors shrink-0"
-                aria-label="Share artist profile"
-              >
-                <Share2 className="w-5 h-5 text-text-secondary" />
-              </button>
-            </div>
-
-            {/* Genre Tags */}
-            {artist.tags.length > 0 && (
-              <div className="flex flex-wrap gap-2">
-                {artist.tags.map((tag) => (
-                  <GenreChip key={tag} genre={tag} />
-                ))}
-              </div>
-            )}
-
-            {/* Stats */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
-              <StatCard
-                icon={Users}
-                value={formatNumber(artist.listeners)}
-                label="Listeners"
-              />
-              <StatCard
-                icon={Headphones}
-                value={formatNumber(artist.playcount)}
-                label="Total Plays"
-              />
-              <StatCard
-                icon={Disc3}
-                value={albumCount.toString()}
-                label="Albums"
-              />
-            </div>
+          <div className="flex flex-col">
+            <span className="text-xs uppercase tracking-widest text-text-tertiary font-bold opacity-60">
+              Total Plays
+            </span>
+            <span className="font-heading text-4xl font-black">
+              {formatNumber(artist.playcount)}
+            </span>
+          </div>
+          <div className="flex flex-col">
+            <span className="text-xs uppercase tracking-widest text-text-tertiary font-bold opacity-60">
+              Studio Albums
+            </span>
+            <span className="font-heading text-4xl font-black">
+              {albumCount}
+            </span>
           </div>
         </div>
       </div>

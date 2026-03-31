@@ -16,12 +16,12 @@ export function ArtistBio({ bio }: ArtistBioProps) {
 
   return (
     <section>
-      <h2 className="text-2xl font-heading font-semibold text-text-primary mb-4">
-        Biography
+      <h2 className="text-3xl font-heading font-semibold text-text-primary mb-8">
+        About
       </h2>
-      <div className="glass rounded-2xl p-6">
+      <div className="bg-white rounded-3xl shadow-[0_2px_20px_rgba(0,0,0,0.04)] p-6 sm:p-8">
         <div
-          className="text-text-secondary leading-relaxed prose prose-invert prose-sm max-w-none"
+          className="text-text-secondary leading-relaxed prose prose-gray prose-base max-w-none"
           dangerouslySetInnerHTML={{
             __html: expanded ? bio.full : bio.summary,
           }}
@@ -29,7 +29,8 @@ export function ArtistBio({ bio }: ArtistBioProps) {
         {hasFullBio && (
           <button
             onClick={() => setExpanded(!expanded)}
-            className="flex items-center gap-1 mt-4 text-sm text-accent-purple hover:text-accent-purple-light transition-colors"
+            className="flex items-center gap-1 mt-4 text-sm font-medium transition-colors duration-300"
+            style={{ color: "var(--accent-hex)" }}
           >
             {expanded ? (
               <>

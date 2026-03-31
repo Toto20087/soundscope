@@ -78,6 +78,12 @@ export function HeroSearchBar() {
     (name: string) => {
       setIsOpen(false);
       setQuery("");
+      // Fire custom event for page transition overlay
+      window.dispatchEvent(
+        new CustomEvent("soundscope:navigate", {
+          detail: { artistName: name },
+        })
+      );
       router.push(`/artist/${encodeURIComponent(name)}`);
     },
     [router]
@@ -147,14 +153,14 @@ export function HeroSearchBar() {
       <div
         className={cn(
           "flex items-center gap-3 px-6 h-14",
-          "bg-white/[0.05] backdrop-blur-xl",
-          "border rounded-2xl transition-all duration-300",
+          "bg-white",
+          "border rounded-2xl transition-all duration-300 shadow-sm",
           focused
-            ? "border-purple-500/30 ring-2 ring-purple-500/20 bg-white/[0.08]"
-            : "border-white/[0.1]"
+            ? "border-purple-400 ring-2 ring-purple-200 shadow-md"
+            : "border-gray-200"
         )}
       >
-        <Search className="w-5 h-5 text-white/40 shrink-0" />
+        <Search className="w-5 h-5 text-gray-400 shrink-0" />
         <input
           ref={inputRef}
           type="text"
@@ -175,7 +181,7 @@ export function HeroSearchBar() {
             if (results.length > 0) setIsOpen(true);
           }}
           onBlur={() => setFocused(false)}
-          className="flex-1 bg-transparent text-text-primary placeholder:text-white/30 outline-none text-lg"
+          className="flex-1 bg-transparent text-text-primary placeholder:text-gray-400 outline-none text-lg"
         />
         {isLoading && (
           <Loader2 className="w-5 h-5 text-accent-purple animate-spin shrink-0" />
@@ -193,6 +199,14 @@ export function HeroSearchBar() {
             <ArrowRight className="w-5 h-5 text-accent-purple hover:text-accent-purple-light transition-colors cursor-pointer" />
           </button>
         )}
+      </div>
+
+      {/* Screen reader announcement */}
+      <div aria-live="polite" aria-atomic="true" className="sr-only">
+        {isOpen && !isLoading && results.length > 0 &&
+          `${results.length} artist${results.length === 1 ? "" : "s"} found`}
+        {isOpen && !isLoading && results.length === 0 && debouncedQuery.length >= 2 &&
+          "No artists found"}
       </div>
 
       {/* Dropdown */}

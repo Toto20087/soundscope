@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono, Sora } from "next/font/google";
 import { Footer } from "@/components/layout/footer";
+import { PageTransition } from "@/components/ui/page-transition";
 import "./globals.css";
 
 const inter = Inter({
@@ -41,9 +42,17 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${sora.variable} ${jetbrainsMono.variable} dark h-full antialiased`}
+      data-scroll-behavior="smooth"
+      className={`${inter.variable} ${sora.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-bg-primary text-text-primary">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-accent-purple focus:text-white focus:outline-none"
+        >
+          Skip to content
+        </a>
+        <PageTransition />
         {children}
         <Footer />
       </body>

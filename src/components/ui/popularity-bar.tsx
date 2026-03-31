@@ -18,7 +18,7 @@ export function PopularityBar({
   return (
     <div className={cn("flex items-center gap-2", className)}>
       <div
-        className="w-24 h-1 bg-white/10 rounded-full overflow-hidden"
+        className="w-24 h-1 bg-gray-200 rounded-full overflow-hidden"
         role="progressbar"
         aria-valuenow={value}
         aria-valuemin={0}

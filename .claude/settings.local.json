@@ -11,7 +11,8 @@
       "WebFetch(domain:atmos.style)",
       "WebFetch(domain:support.last.fm)",
       "WebFetch(domain:dev.to)",
-      "WebFetch(domain:ztabs.co)"
+      "WebFetch(domain:ztabs.co)",
+      "WebFetch(domain:www.wollenlabs.com)"
     ]
   }
 }

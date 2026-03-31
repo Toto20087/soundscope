@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SoundScope | Kendrick Lamar Archive</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800;900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-bright": "#f9f9f9",
+                        "secondary-container": "#fe8a7e",
+                        "on-tertiary-container": "#bed9ff",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#a0caff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-container": "#ffcac4",
+                        "on-secondary-fixed": "#410002",
+                        "on-background": "#1a1c1c",
+                        "primary-fixed": "#ffdad6",
+                        "on-surface": "#1a1c1c",
+                        "tertiary-fixed": "#d2e4ff",
+                        "surface": "#f9f9f9",
+                        "inverse-on-surface": "#f0f1f1",
+                        "on-primary-fixed-variant": "#93000b",
+                        "outline-variant": "#e4beb9",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-secondary-container": "#75221c",
+                        "background": "#f9f9f9",
+                        "tertiary-container": "#0060a4",
+                        "inverse-primary": "#ffb4ab",
+                        "tertiary": "#00487d",
+                        "surface-container-high": "#e8e8e8",
+                        "primary": "#91000a",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "outline": "#8f706c",
+                        "primary-fixed-dim": "#ffb4ab",
+                        "surface-dim": "#dadada",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed": "#001c37",
+                        "secondary-fixed": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#00497e",
+                        "surface-variant": "#e2e2e2",
+                        "primary-container": "#b71c1c",
+                        "surface-container-low": "#f3f3f3",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed-dim": "#ffb4ab",
+                        "on-primary-fixed": "#410002",
+                        "on-surface-variant": "#5b403d",
+                        "inverse-surface": "#2f3131",
+                        "secondary": "#9e4038",
+                        "error": "#ba1a1a",
+                        "surface-container": "#eeeeee",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#b91d1d",
+                        "on-secondary-fixed-variant": "#7f2923"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-primary">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 sticky bg-white/80 dark:bg-zinc-950/80 backdrop-blur-xl">
+<nav class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-8">
+<span class="font-manrope font-black text-2xl tracking-tighter text-red-900 dark:text-red-500">SoundScope</span>
+<div class="hidden md:flex gap-6">
+<a class="text-zinc-500 dark:text-zinc-400 font-medium hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors" href="#">Archive</a>
+<a class="text-red-900 dark:text-red-500 font-bold border-b-2 border-red-900 dark:border-red-500 pb-1" href="#">Analysis</a>
+<a class="text-zinc-500 dark:text-zinc-400 font-medium hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors" href="#">Insights</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="hover:opacity-80 transition-opacity duration-300 scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-on-surface">search</span>
+</button>
+<button class="hover:opacity-80 transition-opacity duration-300 scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-on-surface">account_circle</span>
+</button>
+</div>
+</nav>
+</header>
+<main class="max-w-screen-2xl mx-auto px-8">
+<!-- Section 1: Hero -->
+<section class="relative min-h-[870px] flex flex-col justify-end pb-20 pt-32">
+<div class="absolute inset-0 -z-10 overflow-hidden rounded-xl md:rounded-lg">
+<img class="w-full h-full object-cover opacity-90 brightness-75 grayscale contrast-125" data-alt="dramatic black and white portrait of a thoughtful male rap artist with cinematic lighting and soft bokeh studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6FJrD-S1QxD8RFHwxHjKolGMT5Phjlw6N0UYBAUY5gY_AXz3rnQkuwlZ0jExopJ5Nxp-itQqgW5KH7hA1vlldK5iy45jgZMJFiWPZOPauh6_cOgChdOnKWpqmGdBjUBtiDflQ5ZV_hargCA7i2SIlJq2FJ2x3XswntJMZNdEptkuL6YdtKLI1OkjRd1L6714hDD2PYMsTrEsEpA28xL23V26wPMk-51nIZyXDYgEfZpnc8iKcurlepVDqupUeJ3yojZ4Gl8M9Sg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
+</div>
+<div class="space-y-6">
+<div class="flex gap-2">
+<span class="bg-primary text-on-primary px-4 py-1 rounded-full text-xs font-bold tracking-widest uppercase">Hip Hop</span>
+<span class="bg-primary text-on-primary px-4 py-1 rounded-full text-xs font-bold tracking-widest uppercase">Conscious Rap</span>
+</div>
+<h1 class="font-headline font-black text-7xl md:text-9xl text-on-surface tracking-tighter leading-none">
+                    Kendrick <br/> Lamar
+                </h1>
+<div class="flex flex-wrap gap-12 pt-4">
+<div class="flex flex-col">
+<span class="font-label text-xs uppercase tracking-widest text-on-surface-variant font-bold opacity-60">Monthly Listeners</span>
+<span class="font-headline text-4xl font-black">58.4M</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label text-xs uppercase tracking-widest text-on-surface-variant font-bold opacity-60">Total Plays</span>
+<span class="font-headline text-4xl font-black">12.2B</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label text-xs uppercase tracking-widest text-on-surface-variant font-bold opacity-60">Studio Albums</span>
+<span class="font-headline text-4xl font-black">5</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: AI Evolution -->
+<section class="mt-24">
+<div class="bg-surface-container-lowest p-12 md:p-20 rounded-lg relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-12 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[120px] text-primary" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<div class="max-w-3xl space-y-8">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">colors_spark</span>
+<h2 class="font-headline text-2xl font-bold uppercase tracking-tight">Musical Evolution Analysis</h2>
+</div>
+<p class="font-body text-xl md:text-2xl leading-relaxed text-on-surface-variant italic">
+                        "Lamar's trajectory represents a seismic shift in structural hip-hop. From the cinematic narrative of GKMC to the avant-garde jazz textures of TPAB, the data reveals an unprecedented deviation from pop-normativity, favoring rhythmic complexity and sociopolitical dissonance."
+                    </p>
+<div class="flex flex-wrap gap-4">
+<span class="bg-surface-container-high px-4 py-2 rounded-full font-label text-sm border border-outline-variant/20">Genre shift: 2015</span>
+<span class="bg-surface-container-high px-4 py-2 rounded-full font-label text-sm border border-outline-variant/20">Narrative Complexity: +84%</span>
+<span class="bg-surface-container-high px-4 py-2 rounded-full font-label text-sm border border-outline-variant/20">Jazz Infusion Index: 0.92</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Discography Timeline -->
+<section class="mt-32">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="font-headline text-5xl font-black tracking-tighter">Discography</h2>
+<p class="font-body text-on-surface-variant mt-2 opacity-70">A chronological journey through critical acclaim.</p>
+</div>
+</div>
+<div class="relative">
+<!-- Timeline Line -->
+<div class="absolute top-1/2 left-0 w-full h-[1px] bg-outline-variant/30 -z-0"></div>
+<div class="flex overflow-x-auto gap-12 pb-12 pt-4 no-scrollbar relative z-10 snap-x">
+<!-- Album 1 -->
+<div class="flex-shrink-0 w-64 snap-center">
+<div class="aspect-square bg-zinc-200 rounded-lg overflow-hidden transition-transform hover:scale-105 duration-500 shadow-xl shadow-primary/5">
+<img class="w-full h-full object-cover grayscale" data-alt="minimalist album cover design with grainy texture and vintage photography style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_g7rZ1LrHe8XQwBLHdN8WuvPcgyihVO-WsrI_4pPinXX4YIRZ7tCHtdtryy2eB9O7LSrPPrhh1oDoQ2bg8HQCsPhf1rRiKk9kWP0wyHYRW4jbNej9VFzwCN6qnDSzl2yDkO-mRke3XTZWraLIDfmY7yviDxQj3pxyZyi1K40WmRrCqh1i0zAwoWO87ElhmdiqWSho2J0s6FWgxYxR6X4Xa4xLjuXoVX5ZLTWhqkAA1YRL1sOKxK93QoOZzlIR0DrhyfjEsbST0A"/>
+</div>
+<div class="mt-6 text-center">
+<h3 class="font-headline font-bold text-lg">Section.80</h3>
+<p class="font-label text-xs uppercase tracking-widest opacity-60">2011</p>
+</div>
+</div>
+<!-- Album 2 - Larger for popularity -->
+<div class="flex-shrink-0 w-80 snap-center">
+<div class="aspect-square bg-zinc-200 rounded-lg overflow-hidden transition-transform hover:scale-105 duration-500 shadow-2xl shadow-primary/10">
+<img class="w-full h-full object-cover" data-alt="urban city photography for album art with deep shadows and high contrast editorial look" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-wEvRPXQF_rlSLqYbOesJ5g5H-7ZCx8hGJV1SShXR6aE5v20Z6qH4EbHwftcpMvmX0ivhhYaIn4H84NQvup1RrqGO2NglLycIskdT5K318rweUNIfKO18SHzyauabeSqui_83V5mpl_ClRhXlUMpoBul-Qw2yamxC3MwhfamfM5OF-b28g5OPE5L5VZoFVvjwnkxlSh_oXFPJdnvf7ox6c2s8BLDFIcGXmDjdyiyec79SBy9Ow71Zt3Z8J-jm-pSZgafBsIF_Nw"/>
+</div>
+<div class="mt-6 text-center">
+<h3 class="font-headline font-bold text-xl">good kid, m.A.A.d city</h3>
+<p class="font-label text-xs uppercase tracking-widest opacity-60">2012</p>
+</div>
+</div>
+<!-- Album 3 -->
+<div class="flex-shrink-0 w-80 snap-center">
+<div class="aspect-square bg-zinc-200 rounded-lg overflow-hidden transition-transform hover:scale-105 duration-500 shadow-2xl shadow-primary/20">
+<img class="w-full h-full object-cover" data-alt="abstract artistic album cover with muted tones and dramatic textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCNm0mJ8op0mVVff3iXxMpIKLgTO5y7juzVSjoumsa7LBZtwlrF5hnhPQpAa5bh3VhZNUB8PhPwJZ9odjetlMXVQiFsbNyK9nWyM1-zbdXLlx5poGxUELdIRhqLZOAuwoU9HQzV-SgHsigCerPHEpkwMOFgcbk5qa3aeFDnO2zwVa44gGnXqaZk2tKdmEfHi01S7Y_7b9w57SzEyZAzKS9LYC36Q3xhmcVaQCuTmFQ3FumRE6opofGw9-bGMzcDXJPde23-Vv2dg"/>
+</div>
+<div class="mt-6 text-center">
+<h3 class="font-headline font-bold text-xl">To Pimp a Butterfly</h3>
+<p class="font-label text-xs uppercase tracking-widest opacity-60">2015</p>
+</div>
+</div>
+<!-- Album 4 -->
+<div class="flex-shrink-0 w-80 snap-center">
+<div class="aspect-square bg-zinc-200 rounded-lg overflow-hidden border-4 border-primary transition-transform hover:scale-105 duration-500 shadow-2xl shadow-primary/30">
+<img class="w-full h-full object-cover" data-alt="bold red album cover photography with sharp focus and cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqQEGJea5Xc-QNh2AmCaTvMVkIOtFLRJ86Oj43dPPDHTSuDjElIkFJQz53C7CYVQFBjyxq7ygYn1FAMqB8hhsftSADNQ1Xr0DOJsl4TrdRctmRL9TflmqaolpXodg2BKXhaO1pmEYQZQ5SWpJqNtAvCmPwZFt-0hgMJoNqoozUBK6-SsEuthEtB0UTwQ6-aCzSri5Ivef4LjNB8dAInaLt3p37B0HpJW0bU9TYF-Ls__VfyLFo1AV3ALyEHOlEfDDL6D9tzB0ivA"/>
+</div>
+<div class="mt-6 text-center">
+<h3 class="font-headline font-bold text-xl">DAMN.</h3>
+<p class="font-label text-xs uppercase tracking-widest opacity-60">2017</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Data Insights Grid -->
+<section class="mt-32">
+<h2 class="font-headline text-4xl font-black tracking-tight mb-12">Data Visualizations</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Popularity Distribution -->
+<div class="bg-surface-container-low p-8 rounded-lg aspect-square flex flex-col justify-between">
+<h3 class="font-label text-sm uppercase font-bold tracking-widest opacity-60">Popularity Distribution</h3>
+<div class="flex-grow flex items-center justify-center">
+<div class="relative w-64 h-64">
+<svg class="w-full h-full rotate-[-90deg]" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="transparent" r="15.915" stroke="#e2e2e2" stroke-width="3"></circle>
+<circle cx="18" cy="18" fill="transparent" r="15.915" stroke="#91000a" stroke-dasharray="65 35" stroke-linecap="round" stroke-width="3"></circle>
+<circle cx="18" cy="18" fill="transparent" r="15.915" stroke="#fe8a7e" stroke-dasharray="20 80" stroke-dashoffset="-65" stroke-linecap="round" stroke-width="3"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-headline text-4xl font-black">65%</span>
+<span class="font-label text-[10px] uppercase tracking-tighter">Prime Era</span>
+</div>
+</div>
+</div>
+<div class="flex justify-center gap-6">
+<div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full bg-primary"></div><span class="text-xs font-medium">Global</span></div>
+<div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full bg-secondary-container"></div><span class="text-xs font-medium">Critical</span></div>
+</div>
+</div>
+<!-- Artist Profile Radar -->
+<div class="bg-surface-container-low p-8 rounded-lg aspect-square flex flex-col">
+<h3 class="font-label text-sm uppercase font-bold tracking-widest opacity-60 mb-4">Artist Profile</h3>
+<div class="flex-grow flex items-center justify-center relative">
+<svg class="w-full h-full max-w-[300px]" viewbox="0 0 100 100">
+<polygon fill="none" points="50,5 95,35 95,85 50,110 5,85 5,35" stroke="#e2e2e2" stroke-width="0.5"></polygon>
+<polygon fill="none" points="50,20 80,40 80,80 50,100 20,80 20,40" stroke="#e2e2e2" stroke-width="0.5"></polygon>
+<!-- Data Polygon -->
+<polygon fill="rgba(145, 0, 10, 0.2)" points="50,10 90,40 70,85 50,95 30,70 10,40" stroke="#91000a" stroke-width="2"></polygon>
+</svg>
+<div class="absolute top-0 left-1/2 -translate-x-1/2 text-[10px] font-bold">LYRICISM</div>
+<div class="absolute top-1/4 right-0 text-[10px] font-bold">FLOW</div>
+<div class="absolute bottom-1/4 right-0 text-[10px] font-bold">IMPACT</div>
+<div class="absolute bottom-0 left-1/2 -translate-x-1/2 text-[10px] font-bold">PRODUCTION</div>
+<div class="absolute bottom-1/4 left-0 text-[10px] font-bold">NARRATIVE</div>
+<div class="absolute top-1/4 left-0 text-[10px] font-bold">INNOVATION</div>
+</div>
+</div>
+<!-- Track Duration Scatter -->
+<div class="bg-surface-container-low p-8 rounded-lg aspect-square flex flex-col justify-between">
+<h3 class="font-label text-sm uppercase font-bold tracking-widest opacity-60">Track Duration Correlation</h3>
+<div class="flex-grow relative mt-8 border-l border-b border-outline-variant/30">
+<!-- Points -->
+<div class="absolute bottom-[20%] left-[10%] w-3 h-3 bg-primary rounded-full blur-[1px]"></div>
+<div class="absolute bottom-[40%] left-[30%] w-2 h-2 bg-on-surface opacity-40 rounded-full"></div>
+<div class="absolute bottom-[55%] left-[50%] w-2 h-2 bg-on-surface opacity-40 rounded-full"></div>
+<div class="absolute bottom-[75%] left-[80%] w-4 h-4 bg-primary rounded-full shadow-lg shadow-primary/40 animate-pulse"></div>
+<div class="absolute bottom-[10%] left-[60%] w-2 h-2 bg-on-surface opacity-40 rounded-full"></div>
+<div class="absolute bottom-[85%] left-[20%] w-2 h-2 bg-on-surface opacity-40 rounded-full"></div>
+<div class="absolute bottom-[50%] left-[15%] w-3 h-3 bg-primary/40 rounded-full"></div>
+</div>
+<div class="flex justify-between mt-4 text-[10px] font-bold opacity-40">
+<span>Short (2m)</span>
+<span>Long (12m+)</span>
+</div>
+</div>
+<!-- Genre Diversity Bar -->
+<div class="bg-surface-container-low p-8 rounded-lg aspect-square flex flex-col">
+<h3 class="font-label text-sm uppercase font-bold tracking-widest opacity-60 mb-8">Genre Diversity</h3>
+<div class="space-y-6 flex-grow flex flex-col justify-center">
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-bold uppercase tracking-tighter"><span>Rap</span><span>88%</span></div>
+<div class="w-full h-4 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-primary-container w-[88%]"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-bold uppercase tracking-tighter"><span>Jazz</span><span>42%</span></div>
+<div class="w-full h-4 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary/60 to-primary w-[42%]"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-bold uppercase tracking-tighter"><span>Funk</span><span>35%</span></div>
+<div class="w-full h-4 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary/40 to-primary/80 w-[35%]"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-bold uppercase tracking-tighter"><span>Spoken Word</span><span>15%</span></div>
+<div class="w-full h-4 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary/20 to-primary/40 w-[15%]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: Album Comparison -->
+<section class="mt-32">
+<h2 class="font-headline text-4xl font-black tracking-tight mb-12">Critically Acclaimed Mastery</h2>
+<div class="space-y-8">
+<div class="flex items-center gap-6">
+<img class="w-12 h-12 rounded shadow-md" data-alt="mini album cover art showing high contrast urban texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWFx4_g0FemeQ3WcLxacgnAXduwxQyZ1jtgPjdLD45kqU1vT3M3dsliNjEITiACxWk_H5_y8BFPw58sJNuJiiaUNHvBxlNvpOMR2zpPIdLSaJLNJi7shORiTVxSQEPNnt4VCpQ4SuqT38GAPUjvuEhrO_xlgSO524ZiP0Pztj-INFa9XXH6xcbbD9XD_IxxNDYBXm4TpyRXBgsxzGLJ6ci3xihaLtOiA1x5SUQyHftT0W26gV-h3l51LRECWGGVZEQ7S50hX2cRg"/>
+<div class="flex-grow">
+<div class="h-10 bg-primary/10 rounded-full flex items-center px-4 relative group overflow-hidden">
+<div class="absolute inset-y-0 left-0 bg-primary w-[98%] rounded-full transition-all duration-1000"></div>
+<span class="relative z-10 text-on-primary font-bold text-sm">TPAB - 98/100</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<img class="w-12 h-12 rounded shadow-md" data-alt="red minimalist album icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbawnb1eyqKJ1cNwI8lsRI738m41Clmk2OVnMkwL1iyGEeIVoMHB_CX-kF0T-vsCM-zipE4BURZZDfeuyYoSmmKfvlc9IJkMLz_TVjwo_WVIRUUJ6GkQnRVaIOTco5zAefiFw6MfTBGhiNxqtjn6UAiMXcD8EF0F3jA72Nq1YxUZ8FgW_TTsDOfG8BaqXnYksjcO3T0_Idbwoq2S2roJCMVD55xy3JTSn33uOFciBb167xMN6tqg116KJZDHWqP2Zt1aG8xS8m7Q"/>
+<div class="flex-grow">
+<div class="h-10 bg-primary/10 rounded-full flex items-center px-4 relative group overflow-hidden">
+<div class="absolute inset-y-0 left-0 bg-primary w-[95%] rounded-full transition-all duration-1000"></div>
+<span class="relative z-10 text-on-primary font-bold text-sm">DAMN. - 95/100</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<img class="w-12 h-12 rounded shadow-md" data-alt="black and white urban album thumbnail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbX5b7VCGynFyu6C0xr2vK_bLenMesGtZf4B5I7S8ZcwhGrRqG8UxtWEEvm_KoPznE33EUCoqhyRTpxuTxfxi_wTomwxXeKH4fzcHMlKM6khoRRjjqFk_dIA3VYzgVZP0RlQ3hyQN1c6mTxmBf7PlOGiddDSImsao7HVO2Wrjw0B7fCWYgy-XUy7jm0IIZMkercFaMA99faEe2zVis-w3z0HendbRpMfxtHptkoT-hdFAHJyBCsq7rGt1gsuZtKOMliaPMz9liLg"/>
+<div class="flex-grow">
+<div class="h-10 bg-primary/10 rounded-full flex items-center px-4 relative group overflow-hidden">
+<div class="absolute inset-y-0 left-0 bg-primary w-[91%] rounded-full transition-all duration-1000"></div>
+<span class="relative z-10 text-on-primary font-bold text-sm">GKMC - 91/100</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 6: Top Tracks -->
+<section class="mt-32">
+<h2 class="font-headline text-4xl font-black tracking-tight mb-12">The Heavyweights</h2>
+<div class="space-y-4">
+<!-- Track 1 -->
+<div class="flex items-center gap-8 py-6 group hover:bg-surface-container-low transition-colors px-6 rounded-lg">
+<span class="font-headline text-5xl font-black text-outline opacity-20 w-16">01</span>
+<div class="flex-grow">
+<div class="flex items-center gap-3">
+<h4 class="font-headline text-xl font-bold">Humble.</h4>
+<span class="bg-surface-container-high px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">DAMN.</span>
+</div>
+<div class="mt-3 w-full h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[98%]"></div>
+</div>
+</div>
+<div class="text-right">
+<span class="font-headline text-lg font-black">2.1B</span>
+<p class="font-label text-[10px] uppercase opacity-40">Plays</p>
+</div>
+</div>
+<!-- Track 2 -->
+<div class="flex items-center gap-8 py-6 group hover:bg-surface-container-low transition-colors px-6 rounded-lg">
+<span class="font-headline text-5xl font-black text-outline opacity-20 w-16">02</span>
+<div class="flex-grow">
+<div class="flex items-center gap-3">
+<h4 class="font-headline text-xl font-bold">Alright</h4>
+<span class="bg-surface-container-high px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">TPAB</span>
+</div>
+<div class="mt-3 w-full h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[82%]"></div>
+</div>
+</div>
+<div class="text-right">
+<span class="font-headline text-lg font-black">840M</span>
+<p class="font-label text-[10px] uppercase opacity-40">Plays</p>
+</div>
+</div>
+<!-- Track 3 -->
+<div class="flex items-center gap-8 py-6 group hover:bg-surface-container-low transition-colors px-6 rounded-lg">
+<span class="font-headline text-5xl font-black text-outline opacity-20 w-16">03</span>
+<div class="flex-grow">
+<div class="flex items-center gap-3">
+<h4 class="font-headline text-xl font-bold">Money Trees</h4>
+<span class="bg-surface-container-high px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">GKMC</span>
+</div>
+<div class="mt-3 w-full h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[75%]"></div>
+</div>
+</div>
+<div class="text-right">
+<span class="font-headline text-lg font-black">1.4B</span>
+<p class="font-label text-[10px] uppercase opacity-40">Plays</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 7: Fun Facts -->
+<section class="mt-32 grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="bg-primary/5 p-8 rounded-lg border-l-4 border-primary">
+<span class="material-symbols-outlined text-primary mb-4" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+<h4 class="font-headline font-bold text-lg leading-tight mb-2">Pulitzer Prize</h4>
+<p class="font-body text-sm opacity-70">First non-jazz/classical artist to win for 'DAMN.'</p>
+</div>
+<div class="bg-primary/5 p-8 rounded-lg border-l-4 border-primary">
+<span class="material-symbols-outlined text-primary mb-4" style="font-variation-settings: 'FILL' 1;">history_edu</span>
+<h4 class="font-headline font-bold text-lg leading-tight mb-2">Lyric Density</h4>
+<p class="font-body text-sm opacity-70">Averages 7.2 unique words per line of verse.</p>
+</div>
+<div class="bg-primary/5 p-8 rounded-lg border-l-4 border-primary">
+<span class="material-symbols-outlined text-primary mb-4" style="font-variation-settings: 'FILL' 1;">movie</span>
+<h4 class="font-headline font-bold text-lg leading-tight mb-2">Cinematic Scope</h4>
+<p class="font-body text-sm opacity-70">Albums structured as screenplays with interludes.</p>
+</div>
+<div class="bg-primary/5 p-8 rounded-lg border-l-4 border-primary">
+<span class="material-symbols-outlined text-primary mb-4" style="font-variation-settings: 'FILL' 1;">groups</span>
+<h4 class="font-headline font-bold text-lg leading-tight mb-2">Influence Index</h4>
+<p class="font-body text-sm opacity-70">Cited as primary inspiration for 200+ active artists.</p>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 mt-20 tonal-shift bg-zinc-100 dark:bg-zinc-800/50">
+<div class="flex flex-col md:flex-row justify-between items-center gap-6 max-w-screen-2xl mx-auto">
+<div class="flex flex-col items-center md:items-start gap-2">
+<span class="font-manrope font-black text-xl tracking-tighter text-zinc-900 dark:text-zinc-100">SoundScope</span>
+<p class="font-manrope text-sm tracking-wide uppercase font-semibold text-zinc-400 dark:text-zinc-500">© 2024 SoundScope Archive. Curating the Living History of Music.</p>
+</div>
+<div class="flex gap-8">
+<a class="font-manrope text-sm tracking-wide uppercase font-semibold text-zinc-400 dark:text-zinc-500 hover:text-red-700 dark:hover:text-red-400 transition-colors underline-offset-4 hover:underline" href="#">Privacy</a>
+<a class="font-manrope text-sm tracking-wide uppercase font-semibold text-zinc-400 dark:text-zinc-500 hover:text-red-700 dark:hover:text-red-400 transition-colors underline-offset-4 hover:underline" href="#">Terms</a>
+<a class="font-manrope text-sm tracking-wide uppercase font-semibold text-zinc-400 dark:text-zinc-500 hover:text-red-700 dark:hover:text-red-400 transition-colors underline-offset-4 hover:underline" href="#">Editorial Guidelines</a>
+<a class="font-manrope text-sm tracking-wide uppercase font-semibold text-zinc-400 dark:text-zinc-500 hover:text-red-700 dark:hover:text-red-400 transition-colors underline-offset-4 hover:underline" href="#">API</a>
+</div>
+</div>
+</footer>
+</body></html>

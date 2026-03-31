@@ -162,6 +162,19 @@ export function generateFunFacts(
     }
   }
 
+  // 9. Similar Artist Connection
+  if (artist.similarArtists.length > 0) {
+    const closest = artist.similarArtists[0];
+    facts.push({
+      id: "similar-artist",
+      icon: "Users",
+      category: "comparison",
+      title: "Musical Relative",
+      text: `Last.fm considers ${closest.name} as ${artist.name}'s closest musical relative.`,
+      score: 4,
+    });
+  }
+
   // Sort by score and return top 4
   return facts
     .sort((a, b) => b.score - a.score)

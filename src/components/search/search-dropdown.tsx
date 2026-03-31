@@ -31,7 +31,7 @@ export function SearchDropdown({
 }: SearchDropdownProps) {
   if (error) {
     return (
-      <div className="absolute top-full mt-2 w-full bg-bg-secondary/95 backdrop-blur-xl border border-white/10 rounded-xl overflow-hidden shadow-2xl z-50 p-4">
+      <div className="absolute top-full mt-2 w-full bg-white border border-gray-200 rounded-xl overflow-hidden shadow-2xl z-50 p-4">
         <p className="text-text-tertiary text-sm text-center">{error}</p>
       </div>
     );
@@ -39,7 +39,7 @@ export function SearchDropdown({
 
   if (!isLoading && results.length === 0) {
     return (
-      <div className="absolute top-full mt-2 w-full bg-bg-secondary/95 backdrop-blur-xl border border-white/10 rounded-xl overflow-hidden shadow-2xl z-50 p-4">
+      <div className="absolute top-full mt-2 w-full bg-white border border-gray-200 rounded-xl overflow-hidden shadow-2xl z-50 p-4">
         <p className="text-text-tertiary text-sm text-center">
           No artists found. Try a different spelling.
         </p>
@@ -53,7 +53,7 @@ export function SearchDropdown({
     <ul
       id="search-results"
       role="listbox"
-      className="absolute top-full mt-2 w-full bg-bg-secondary/95 backdrop-blur-xl border border-white/10 rounded-xl overflow-hidden shadow-2xl z-50"
+      className="absolute top-full mt-2 w-full bg-white border border-gray-200 rounded-xl overflow-hidden shadow-2xl z-50"
     >
       {results.map((artist, index) => (
         <li
@@ -64,8 +64,8 @@ export function SearchDropdown({
           className={cn(
             "flex items-center gap-3 px-4 py-3 cursor-pointer transition-colors duration-150",
             index === activeIndex
-              ? "bg-white/10"
-              : "hover:bg-white/5"
+              ? "bg-gray-100"
+              : "hover:bg-gray-50"
           )}
           onClick={() => onSelect(artist.name)}
           onMouseEnter={() => onHover(index)}

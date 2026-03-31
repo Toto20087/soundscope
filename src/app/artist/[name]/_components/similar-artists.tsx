@@ -14,7 +14,7 @@ export function SimilarArtists({ artists }: SimilarArtistsProps) {
         <Link
           key={artist.name}
           href={`/artist/${encodeURIComponent(artist.name)}`}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-text-secondary hover:bg-white/10 hover:text-text-primary transition-all"
+          className="inline-flex items-center px-4 py-2 rounded-full bg-gray-50 border border-gray-200 text-sm text-text-secondary hover:bg-gray-100 hover:text-text-primary transition-all"
         >
           {artist.name}
         </Link>

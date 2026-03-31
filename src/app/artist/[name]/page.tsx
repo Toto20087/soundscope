@@ -4,12 +4,12 @@ import { getArtistFullProfile } from "@/lib/data-aggregator";
 import { formatNumber } from "@/lib/utils";
 import { Header } from "@/components/layout/header";
 import {
-  ArtistHeroSkeleton,
   TrackListSkeleton,
   TimelineSkeleton,
   ChartSkeleton,
   FunFactsSkeleton,
 } from "@/components/ui/skeletons";
+import { AccentColorProvider } from "@/contexts/accent-color-context";
 import { ArtistHero } from "./_components/artist-hero";
 import { ArtistBio } from "./_components/artist-bio";
 import { AlbumTimeline } from "./_components/album-timeline";
@@ -17,6 +17,8 @@ import { AlbumComparisonChart } from "./_components/album-comparison-chart";
 import { TopTracks } from "./_components/top-tracks";
 import { FunFacts } from "./_components/fun-facts";
 import { SimilarArtists } from "./_components/similar-artists";
+import { AiAnalysis } from "./_components/ai-analysis";
+import { ArtistInsights } from "./_components/artist-insights";
 
 interface ArtistPageProps {
   params: Promise<{ name: string }>;
@@ -39,9 +41,7 @@ export async function generateMetadata({
       },
     };
   } catch {
-    return {
-      title: decodedName,
-    };
+    return { title: decodedName };
   }
 }
 
@@ -51,76 +51,81 @@ export default async function ArtistPage({ params }: ArtistPageProps) {
   const profile = await getArtistFullProfile(decodedName);
   const { artist, albums, topTracks, funFacts } = profile;
 
+  // Find the most popular album's cover for accent color extraction
+  const mostPopularAlbum = albums.length > 0
+    ? albums.reduce((max, a) => (a.playcount > max.playcount ? a : max), albums[0])
+    : null;
+  const accentImageUrl = mostPopularAlbum?.image || artist.image;
+
   return (
-    <>
+    <AccentColorProvider imageUrl={accentImageUrl}>
       <Header />
-      <main className="flex-1">
-        {/* Section 3A: Hero */}
+      <main id="main-content" className="flex-1 max-w-screen-2xl mx-auto px-8">
+        {/* Hero — full viewport */}
         <ArtistHero artist={artist} albumCount={albums.length} />
 
-        <div className="max-w-6xl mx-auto px-4 space-y-16 py-12">
-          {/* Section 3B: Biography */}
-          {artist.bio && <ArtistBio bio={artist.bio} />}
+        <div>
+          {/* AI Evolution Analysis — mt-24 like the design */}
+          <AiAnalysis artistName={artist.name} />
 
-          {/* Section 3C: Timeline */}
+          {/* Biography */}
+          {artist.bio && (
+            <div className="mt-32">
+              <ArtistBio bio={artist.bio} />
+            </div>
+          )}
+
+          {/* Discography Timeline */}
           {albums.length > 0 && (
-            <Suspense fallback={<TimelineSkeleton />}>
-              <section>
-                <h2 className="text-2xl font-heading font-semibold text-text-primary mb-6">
-                  Discography Timeline
-                </h2>
-                <AlbumTimeline
-                  albums={albums}
-                  artistName={artist.name}
-                />
-              </section>
-            </Suspense>
+            <section className="mt-32">
+              <div className="flex justify-between items-end mb-12">
+                <div>
+                  <h2 className="font-heading text-5xl font-black tracking-tighter">Discography</h2>
+                  <p className="text-text-tertiary mt-2 opacity-70">A chronological journey through the catalog.</p>
+                </div>
+              </div>
+              <AlbumTimeline albums={albums} artistName={artist.name} />
+            </section>
           )}
 
-          {/* Section 3D: Album Comparison Chart */}
+          {/* Data Insights (4 charts) */}
+          <section className="mt-32">
+            <h2 className="font-heading text-4xl font-black tracking-tight mb-12">Data Visualizations</h2>
+            <ArtistInsights albums={albums} topTracks={topTracks} />
+          </section>
+
+          {/* Album Comparison */}
           {albums.length >= 2 && (
-            <Suspense fallback={<ChartSkeleton />}>
-              <section>
-                <AlbumComparisonChart albums={albums} />
-              </section>
-            </Suspense>
+            <section className="mt-32">
+              <AlbumComparisonChart albums={albums} />
+            </section>
           )}
 
-          {/* Section 3E: Top Tracks */}
+          {/* Top Tracks */}
           {topTracks.length > 0 && (
-            <Suspense fallback={<TrackListSkeleton count={10} />}>
-              <section>
-                <h2 className="text-2xl font-heading font-semibold text-text-primary mb-6">
-                  Top Tracks
-                </h2>
-                <TopTracks tracks={topTracks} artistName={artist.name} />
-              </section>
-            </Suspense>
+            <section className="mt-32">
+              <h2 className="font-heading text-4xl font-black tracking-tight mb-12">The Heavyweights</h2>
+              <TopTracks tracks={topTracks} artistName={artist.name} />
+            </section>
           )}
 
-          {/* Section 3F: Fun Facts */}
+          {/* Fun Facts */}
           {funFacts.length > 0 && (
-            <Suspense fallback={<FunFactsSkeleton />}>
-              <section>
-                <h2 className="text-2xl font-heading font-semibold text-text-primary mb-6">
-                  Fun Facts
-                </h2>
-                <FunFacts facts={funFacts} />
-              </section>
-            </Suspense>
+            <section className="mt-32">
+              <h2 className="font-heading text-4xl font-black tracking-tight mb-12">Key Insights</h2>
+              <FunFacts facts={funFacts} />
+            </section>
           )}
 
           {/* Similar Artists */}
           {artist.similarArtists.length > 0 && (
-            <section>
-              <h2 className="text-2xl font-heading font-semibold text-text-primary mb-6">
-                Similar Artists
-              </h2>
+            <section className="mt-32 mb-20">
+              <h2 className="font-heading text-4xl font-black tracking-tight mb-12">Related Artists</h2>
               <SimilarArtists artists={artist.similarArtists} />
             </section>
           )}
         </div>
       </main>
-    </>
+    </AccentColorProvider>
   );
 }

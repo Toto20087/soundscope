@@ -17,18 +17,20 @@ export function GlassCard({
     <div
       className={cn(
         "relative overflow-hidden",
-        "bg-white/[0.05] backdrop-blur-xl",
-        "border border-white/[0.1]",
-        "shadow-[0_8px_32px_0_rgba(0,0,0,0.36)]",
-        "rounded-2xl p-6",
+        "bg-white",
+        "shadow-[0_2px_20px_rgba(0,0,0,0.04)]",
+        "rounded-3xl p-6",
         "transition-all duration-300",
-        "hover:bg-white/[0.08] hover:border-white/[0.15]",
-        glow && "shadow-[0_0_40px_rgba(139,92,246,0.15)]",
+        "hover:shadow-[0_4px_24px_rgba(0,0,0,0.08)]",
+        glow && "shadow-[0_0_30px_rgba(var(--accent-rgb),0.1)]",
         className
       )}
     >
       {accent && (
-        <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-purple-500 via-cyan-400 to-emerald-400" />
+        <div
+          className="absolute top-0 left-0 right-0 h-[2px] transition-colors duration-300"
+          style={{ background: `linear-gradient(90deg, var(--accent-hex) 0%, #06B6D4 50%, #10B981 100%)` }}
+        />
       )}
       {children}
     </div>

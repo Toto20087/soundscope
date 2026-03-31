@@ -17,13 +17,13 @@ export default function ArtistLoading() {
         <div className="max-w-6xl mx-auto px-4 space-y-16 py-12">
           {/* Bio skeleton */}
           <div className="space-y-3">
-            <div className="h-7 w-32 rounded-lg bg-white/10 animate-pulse" />
-            <div className="h-24 w-full rounded-2xl bg-white/10 animate-pulse" />
+            <div className="h-7 w-32 rounded-lg bg-gray-200 animate-pulse" />
+            <div className="h-24 w-full rounded-2xl bg-gray-200 animate-pulse" />
           </div>
 
           {/* Timeline skeleton */}
           <div className="space-y-3">
-            <div className="h-7 w-48 rounded-lg bg-white/10 animate-pulse" />
+            <div className="h-7 w-48 rounded-lg bg-gray-200 animate-pulse" />
             <TimelineSkeleton />
           </div>
 
@@ -32,7 +32,7 @@ export default function ArtistLoading() {
 
           {/* Tracks skeleton */}
           <div className="space-y-3">
-            <div className="h-7 w-32 rounded-lg bg-white/10 animate-pulse" />
+            <div className="h-7 w-32 rounded-lg bg-gray-200 animate-pulse" />
             <TrackListSkeleton count={10} />
           </div>
 
