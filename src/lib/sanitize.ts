@@ -1,7 +1,9 @@
-import DOMPurify from "isomorphic-dompurify";
+import sanitize from "sanitize-html";
 
 const ALLOWED_TAGS = ["p", "br", "a", "em", "strong", "b", "i"];
-const ALLOWED_ATTR = ["href", "rel", "target"];
+const ALLOWED_ATTR: Record<string, string[]> = {
+  a: ["href", "rel", "target"],
+};
 
 /**
  * Sanitize HTML content from Last.fm bios and wikis.
@@ -10,10 +12,9 @@ const ALLOWED_ATTR = ["href", "rel", "target"];
 export function sanitizeHtml(html: string): string {
   if (!html) return "";
 
-  const clean = DOMPurify.sanitize(html, {
-    ALLOWED_TAGS,
-    ALLOWED_ATTR,
-    ADD_ATTR: ["target"],
+  const clean = sanitize(html, {
+    allowedTags: ALLOWED_TAGS,
+    allowedAttributes: ALLOWED_ATTR,
   });
 
   // Add rel="noopener noreferrer" and target="_blank" to all links
