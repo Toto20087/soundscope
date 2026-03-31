@@ -6,6 +6,10 @@
 
 Search any artist and get a complete data-driven profile: chronological discography timeline, statistical insights, interactive charts, AI-powered evolution analysis, and auto-generated fun facts.
 
+## Demo
+
+[![Watch the video](https://img.shields.io/badge/▶_Watch_Demo-Google_Drive-4285F4?style=for-the-badge&logo=googledrive&logoColor=white)](https://drive.google.com/file/d/1b54l3-s-DQiVTzD9cPu5JHynuwnP5B7R/view?usp=sharing)
+
 ## Features
 
 - **Artist Search** — Real-time autocomplete powered by Last.fm
