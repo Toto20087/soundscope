@@ -2,6 +2,8 @@
 
 **Music Data Explorer** — Uncover the story behind any artist's musical evolution.
 
+**[Live Demo](https://soundscope-ten.vercel.app/)** · **[GitHub Repository](https://github.com/Toto20087/soundscope/)**
+
 Search any artist and get a complete data-driven profile: chronological discography timeline, statistical insights, interactive charts, AI-powered evolution analysis, and auto-generated fun facts.
 
 ## Features
@@ -63,7 +65,7 @@ Browser → Next.js App Router
 ### Setup
 
 ```bash
-git clone https://github.com/your-username/sound-scope.git
+git clone https://github.com/Toto20087/soundscope.git
 cd sound-scope
 npm install
 cp .env.example .env.local
